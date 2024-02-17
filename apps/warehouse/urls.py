@@ -1,5 +1,6 @@
 from django.urls import path
 
+from apps.warehouse.api_views.sensor_views import SensorView
 from apps.warehouse.api_views.HikCentralAccessRecord import HikCentralAccessRecordView, HikCentralAccessRecordsView, \
     HikCentralAccessRecordDetailView
 from apps.warehouse.api_views.academy_views import AcademyView, AcademiesView, AcademyDetailView
@@ -52,4 +53,6 @@ urlpatterns = [
     path('hikcentral_access_record/', HikCentralAccessRecordView.as_view(), name='create_hikcentral_access_record'),
     path('hikcentral_access_records/filter/', HikCentralAccessRecordsView.as_view(), name='filter_hikcentral_access_records'),
     path('hikcentral_access_record/<int:pk>/', HikCentralAccessRecordDetailView.as_view(), name='modify_hikcentral_access_record'),
+
+path('sensor/', SensorView.as_view(), name='create_sensor'),
 ]

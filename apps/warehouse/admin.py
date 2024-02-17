@@ -1,4 +1,6 @@
 from django.contrib import admin
+
+from apps.warehouse.models.sensor_model import Sensor
 from apps.warehouse.models.academy_model import Academy
 from apps.warehouse.models.attendance_record_model import AttendanceRecord
 from apps.warehouse.models.location_record_model import LocationRecord
@@ -35,3 +37,8 @@ class StudentAdmin(admin.ModelAdmin):
 @admin.register(Shift)
 class ShiftAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Shift._meta.fields]
+
+
+@admin.register(Sensor)
+class ScanAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Sensor._meta.fields]
